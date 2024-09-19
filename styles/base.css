@@ -1,0 +1,105 @@
+/*
+ * Copyright (C) 2024 qwardo <odrawq.qwardo@gmail.com>
+ *
+ * This file is part of Console Ficus Web.
+ *
+ * Console Ficus Web is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Console Ficus Web is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Console Ficus Web. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@font-face {
+    font-family: "Roboto Mono Regular";
+    src: url("../fonts/base.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono Regular", monospace;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(10, 10, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#terminal {
+    width: 90%;
+    max-width: 1000px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#window {
+    padding: 20px;
+    height: 500px;
+    font-size: 12pt;
+    border: 1px solid rgb(50, 50, 50);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(20, 20, 20);
+    overflow-y: auto;
+    white-space: pre-wrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#window::-webkit-scrollbar {
+    display: none;
+}
+
+#input-field-wrapper {
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid rgb(70, 70, 70);
+    background-color: rgb(50, 50, 50);
+    display: flex;
+}
+
+#input-field {
+    padding: 10px;
+    flex-grow: 1;
+    font-size: 12pt;
+    border-radius: 10px;
+    border: 1px solid rgb(70, 70, 70);
+    color: rgb(215, 215, 215);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    background: none;
+}
+
+#input-field:focus {
+    background-color: rgb(30, 30, 30);
+    box-shadow: 0px 0px 8px rgb(0, 230, 120);
+    outline: none;
+}
+
+#input-field::placeholder {
+    color: rgb(215, 215, 215);
+}
+
+.stdin {
+    color: rgb(215, 215, 215);
+}
+
+.stdout {
+    color: rgb(0, 230, 120);
+}
+
+.stderr {
+    color: rgb(255, 80, 80);
+}
